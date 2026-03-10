@@ -71,17 +71,11 @@ The Tableau dashboard visualizes:
 - Top-performing products
 - Product return patterns
 
-*<img width="1150" height="588" alt="image" src="https://github.com/user-attachments/assets/3f69a3a8-fb9c-4f0b-af69-61931f6476c1" />
-*
+<img width="1150" height="588" alt="image" src="https://github.com/user-attachments/assets/3f69a3a8-fb9c-4f0b-af69-61931f6476c1" />
 
 ---
 
 ## 📁 Repository Structure
 
-Retail_Sales_Performance_Analysis
-│
-├── dataset.csv
-├── SQL_queries.sql
-├── tableau_dashboard.png
-└── README.md
+
 
