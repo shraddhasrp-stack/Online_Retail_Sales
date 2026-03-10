@@ -80,5 +80,13 @@ The Tableau dashboard visualizes:
 
 ## 📁 Repository Structure
 
+Online_Retail_Sales_Performance_Analysis
+│
+├── 1. Raw_Data
+├── 2. Cleaned_Data
+├── 3. SQL_Analysis
+├── 4. Tableau_Dashboard
+└── 5. README.md
 
+---
 
