@@ -1,0 +1,77 @@
+-- Preview dataset
+SELECT *
+FROM dbo.[Online Retail Data Set]
+
+
+--Monthly Performance Analysis (Dec 2010–Nov 2011)
+SELECT DATENAME(Month, InvoiceDate) AS 'Month',
+	   YEAR(invoicedate) AS 'Year',
+	   COUNT(InvoiceNo) AS 'InvoiceCount',
+	   SUM(Quantity) AS 'TotalQuantity',
+	   AVG(UnitPrice) AS 'AvgUnitPrice',
+	   SUM(Revenue) AS 'TotalRevenue',
+	   ROUND(SUM(Revenue) * 100/SUM(SUM(Revenue)) OVER (), 2) AS 'RevenuePercentage'
+FROM dbo.[Online Retail Data Set]
+WHERE InvoiceDate >= '2010-12-01' AND InvoiceDate <= '2011-11-30'
+GROUP BY YEAR(InvoiceDate), Month(InvoiceDate), DateName(Month, InvoiceDate)
+Order By Year(invoicedate), MONTH(invoicedate)
+
+
+ --Product Performance Analysis--
+SELECT Count(Distinct(StockCode)) AS 'ProductCount'
+FROM dbo.[Online Retail Data Set]
+
+SELECT TOP 10 StockCode,
+	COUNT(InvoiceNo) AS 'InvoiceCount',
+	SUM(Quantity) AS 'TotalQuantity',
+    SUM(Revenue) AS 'TotalRevenue',
+    ROUND(SUM(Revenue) * 100/SUM(SUM(Revenue)) OVER (), 2) AS 'RevenuePercentage'
+FROM dbo.[Online Retail Data Set]
+WHERE InvoiceDate >= '2010-12-01' AND InvoiceDate <= '2011-11-30'
+    AND StockCode NOT IN ('B', 'AMAZONFEE', 'POST', 'M')
+GROUP BY StockCode
+ORDER BY TotalRevenue DESC
+
+
+--Country Analysis--
+SELECT DISTINCT(Country) AS 'CountryName'
+FROM dbo.[Online Retail Data Set]
+
+SELECT TOP 10 Country,
+    COUNT(InvoiceNo) AS 'InvoiceCount',
+	SUM(Quantity) AS 'TotalQuantity',
+	SUM(Revenue) AS 'TotalRevenue',
+    ROUND(SUM(Revenue) * 100/SUM(SUM(Revenue)) OVER (), 2) AS 'RevenuePercentage'
+FROM dbo.[Online Retail Data Set]
+WHERE InvoiceDate >= '2010-12-01' AND InvoiceDate <= '2011-11-30'
+GROUP BY Country
+ORDER BY TotalRevenue DESC
+
+
+--Customer Performance--
+SELECT COUNT(DISTINCT(CustomerID)) AS 'CustomerCount'
+FROM dbo.[Online Retail Data Set]
+WHERE CustomerID IS NOT NULL
+
+SELECT TOP 11 CustomerID,
+	COUNT(DISTINCT InvoiceNo) AS 'InvoiceCount',
+	SUM(Quantity) AS 'TotalQuantity',
+	SUM(Revenue) AS 'TotalRevenue',
+	ROUND(SUM(Revenue) * 100/SUM(SUM(Revenue)) OVER (), 2) AS 'RevenuePercentage'
+FROM dbo.[Online Retail Data Set]
+WHERE InvoiceDate >= '2010-12-01' AND InvoiceDate <= '2011-11-30'
+GROUP BY CustomerID
+ORDER BY TotalRevenue DESC
+
+
+--Sales Return--
+SELECT TOP 10 StockCode,
+	   SUM(Quantity) AS 'TotalQuantity',
+	   COUNT(InvoiceNo) AS 'InvoiceCount',
+	   SUM(Revenue) AS 'TotalSalesReturn'
+FROM dbo.[Online Retail Data Set]
+WHERE InvoiceDate >= '2010-12-01' AND InvoiceDate <= '2011-11-30' 
+	AND InvoiceNo LIKE 'C%' 
+	AND Description NOT IN ('Manual')
+GROUP BY StockCode
+ORDER BY TotalQuantity
