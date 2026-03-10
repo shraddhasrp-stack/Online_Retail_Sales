@@ -1,23 +1,95 @@
-# Online Retail Sales Analysis
+# 📊 Retail Sales Performance Analysis
 
-## Objective
-Analyze retail sales data to identify revenue trends, top products, and customer purchasing behavior.
+This project analyzes the **Online Retail Dataset** to identify sales trends, product performance, customer behavior, product returns, and geographic revenue distribution.
 
-## Tools Used
-- Excel
-- SQL
-- Power BI
+The analysis was performed using **SQL for data processing** and **Tableau Public for visualization**.
 
-## Key Analysis
-- Sales trend over time
-- Top selling products
+🛠 Tools: SQL (SSMS), Excel, Tableau Public  
+📁 Dataset: Online Retail Dataset (Dec 2010 – Nov 2011)
+
+---
+
+## 🎯 Project Objective
+
+Transform raw transactional data into **business insights** that help understand:
+
+- Seasonal sales patterns
+- Product revenue distribution
+- Geographic sales concentration
+- Customer data gaps
+- Product return patterns
+
+---
+
+## 🧹 Data Preparation
+
+Key preprocessing steps:
+
+- Created **Revenue column**  
+  `Revenue = UnitPrice × Quantity`
+
+- Identified invoice types:
+  - Normal sales invoices
+  - Credit notes (returns)
+  - Adjustment entries (removed)
+
+- Removed records with:
+  - Missing product descriptions
+  - Zero revenue
+  - Accounting adjustment entries
+
+- Converted Excel dataset to **CSV** for SQL analysis.
+
+---
+
+## 📈 Key Insights
+
+**Seasonal Sales Pattern**
+- Revenue peaks between **September and November**.
+
+**Product Distribution**
+- ~3,800 products in dataset  
+- Top 10 products contribute **~9.5% of revenue**
+
+**Geographic Concentration**
+- **~84% of revenue comes from the UK**
+
+**Customer Data Gap**
+- **14.7% of revenue** comes from transactions without CustomerID.
+
+**Product Returns**
+- Returns concentrated in a small number of items, particularly **Stock Code 23166**.
+
+---
+
+## 📊 Dashboard
+
+The Tableau dashboard visualizes:
+
+- Monthly revenue trends
 - Revenue by country
-- Customer purchase behavior
+- Top-performing products
+- Product return patterns
 
-## Dataset
-Online Retail dataset containing transaction level sales data.
+*(Add dashboard screenshot here)*
 
-## Insights
-- Majority of revenue generated from the UK
-- Seasonal spikes in Q4
-- Few products contribute to majority of revenue
+---
+
+## 📁 Repository Structure
+
+Retail_Sales_Performance_Analysis
+│
+├── dataset.csv
+├── SQL_queries.sql
+├── tableau_dashboard.png
+└── README.md
+
+---
+
+## 🔧 Skills Demonstrated
+
+- Data cleaning
+- SQL analysis
+- Business insight generation
+- Data visualization
+- Retail sales performance analysis
