@@ -71,9 +71,10 @@ The Tableau dashboard visualizes:
 - Top-performing products
 - Product return patterns
 
-🔗 [View Tableau Dashboard](https://public.tableau.com/app/profile/shraddha.patil7431/viz/OnlineRetailSales_17730061003910/Dashboard1?publish=yes)
+<img width="1150" height="588" alt="4  Dashboard_screenshot" src="https://github.com/user-attachments/assets/9978d194-dee8-4604-b843-7f836fc1aa15" />
 
-🔗 https://public.tableau.com/app/profile/shraddha.patil7431/viz/OnlineRetailSales_17730061003910/Dashboard1?publish=yes
+
+🔗 [View Tableau Dashboard](https://public.tableau.com/app/profile/shraddha.patil7431/viz/OnlineRetailSales_17730061003910/Dashboard1?publish=yes)
 
 ---
 
