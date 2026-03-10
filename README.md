@@ -30,8 +30,8 @@ Key preprocessing steps:
 
 - Identified invoice types:
   - Normal sales invoices
-  - Credit notes (returns)
-  - Adjustment entries (removed)
+  - Credit notes (sales returns)
+  - Adjustment entries (accounting adjustments)
 
 - Removed records with:
   - Missing product descriptions
@@ -45,10 +45,10 @@ Key preprocessing steps:
 ## 📈 Key Insights
 
 **Seasonal Sales Pattern**
-- Revenue peaks between **September and November**.
+- Revenue peaks between **September and November 2011**.
 
 **Product Distribution**
-- ~3,800 products in dataset  
+- ~3,800+ products in dataset  
 - Top 10 products contribute **~9.5% of revenue**
 
 **Geographic Concentration**
@@ -71,7 +71,8 @@ The Tableau dashboard visualizes:
 - Top-performing products
 - Product return patterns
 
-*(Add dashboard screenshot here)*
+*<img width="1150" height="588" alt="image" src="https://github.com/user-attachments/assets/3f69a3a8-fb9c-4f0b-af69-61931f6476c1" />
+*
 
 ---
 
@@ -84,12 +85,3 @@ Retail_Sales_Performance_Analysis
 ├── tableau_dashboard.png
 └── README.md
 
----
-
-## 🔧 Skills Demonstrated
-
-- Data cleaning
-- SQL analysis
-- Business insight generation
-- Data visualization
-- Retail sales performance analysis
